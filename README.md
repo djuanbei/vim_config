@@ -1,4 +1,17 @@
 # vim_config
+##Plugin 
+https://github.com/junegunn/vim-plug
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  
+https://github.com/xavierd/clang_complete
+
+git clone https://github.com/xavierd/clang_complete.git /tmp/clang_complete
+cp -r /tmp/clang_complete/* ~/.vim
+
+
+
 
 ## vim configure file .vimrc 
 
