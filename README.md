@@ -2,16 +2,26 @@
 ##Plugin 
 https://github.com/junegunn/vim-plug
 
+```shell
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  
+```  
 https://github.com/xavierd/clang_complete
 
+```shell
 git clone https://github.com/xavierd/clang_complete.git /tmp/clang_complete
 cp -r /tmp/clang_complete/* ~/.vim
+```
 
+### Vundle
+
+```shell
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
 
 ### intsall git plugin 
+
+```shell
 
 mkdir -p ~/.vim/pack/tpope/start
 cd ~/.vim/pack/tpope/start
@@ -19,15 +29,18 @@ git clone https://tpope.io/vim/fugitive.git
 vim -u NONE -c "helptags fugitive/doc" -c q
 call plug#end()
 
-
+```shell
 
 ## vim configure file .vimrc 
 
-set number
+```plain
 
+
+set number
+set hlsearch 
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
+set autoindent
 
 " Automatically closing braces
 inoremap {<CR> {<CR>}<Esc>ko<tab>
@@ -42,10 +55,55 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'cdelledonne/vim-cmake'
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 
 
 call plug#end()
 
 
+
+" Vundle Plugin manager 
+"
+"
+
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+"
+Plugin 'godlygeek/tabular'
+Plugin 'preservim/vim-markdown'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
  " provide path directly to the library file
- let g:clang_library_path='/opt/homebrew/opt/llvm/lib/libclang.dylib'
+ let g:clang_library_path='/usr/local/opt/llvm/lib/libclang.dylib'
+	
+
+
+ ```
