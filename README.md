@@ -95,6 +95,7 @@ Plugin 'Valloric/YouCompleteMe'
 "Compiling YCM with semantic support for C-family languages through clangd:
 "cd ~/.vim/bundle/YouCompleteMe
 "python3 install.py --clangd-YcmCompleter
+" Add in Project CMakeLists.txt set(CMAKE_EXPORT_COMPILE_COMMANDS ON)   
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
