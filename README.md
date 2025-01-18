@@ -29,7 +29,7 @@ git clone https://tpope.io/vim/fugitive.git
 vim -u NONE -c "helptags fugitive/doc" -c q
 call plug#end()
 
-```shell
+```
 
 ## vim configure file .vimrc 
 
