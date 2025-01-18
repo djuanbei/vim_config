@@ -113,8 +113,9 @@ filetype plugin indent on    " required
 
 
  " provide path directly to the library file
- let llvm_root=system("brew --prefix llvm ")
- let g:clang_library_path=llvm_root . '/lib/libclang.dylib'
+let g:clang_library_path='/opt/homebrew/opt/llvm/lib/libclang.dylib'
+ "let llvm_root=system("brew --prefix llvm ")
+ "let g:clang_library_path=llvm_root . '/lib/libclang.dylib'
 	
 
 nnoremap <C-l>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
