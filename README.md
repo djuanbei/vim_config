@@ -75,8 +75,6 @@ call plug#end()
 "
 "
 
-filetype off                  " required
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -92,8 +90,14 @@ Plugin 'VundleVim/Vundle.vim'
 "
 Plugin 'godlygeek/tabular'
 Plugin 'preservim/vim-markdown'
+Plugin 'Valloric/YouCompleteMe'
+
+"Compiling YCM with semantic support for C-family languages through clangd:
+"cd ~/.vim/bundle/YouCompleteMe
+"python3 install.py --clangd-YcmCompleter
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -109,8 +113,16 @@ filetype plugin indent on    " required
 
 
  " provide path directly to the library file
- let g:clang_library_path='/usr/local/opt/llvm/lib/libclang.dylib'
+ let g:clang_library_path='/opt/homebrew/opt/llvm/lib/libclang.dylib'
 	
+
+nnoremap <C-l>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+
+ let gitBranch=system("git rev-parse --abbrev-ref HEAD")
+ set laststatus=2
+ set statusline=%F%m%r%h%w\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]\ 
+ execute "set statusline +=" . gitBranch
 
 
  ```
