@@ -27,9 +27,16 @@ mkdir -p ~/.vim/pack/tpope/start
 cd ~/.vim/pack/tpope/start
 git clone https://tpope.io/vim/fugitive.git
 vim -u NONE -c "helptags fugitive/doc" -c q
-call plug#end()
 
 ```
+### intsall c/c++ header file switch 
+down https://www.vim.org/scripts/script.php?script_id=31 a.vim
+```shell
+cp a.vim ~/.vim/plugin
+
+
+```
+
 
 ## vim configure file .vimrc 
 
