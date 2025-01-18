@@ -11,6 +11,14 @@ git clone https://github.com/xavierd/clang_complete.git /tmp/clang_complete
 cp -r /tmp/clang_complete/* ~/.vim
 
 
+### intsall git plugin 
+
+mkdir -p ~/.vim/pack/tpope/start
+cd ~/.vim/pack/tpope/start
+git clone https://tpope.io/vim/fugitive.git
+vim -u NONE -c "helptags fugitive/doc" -c q
+call plug#end()
+
 
 
 ## vim configure file .vimrc 
@@ -33,6 +41,8 @@ call plug#begin()
 " List your plugins here
 Plug 'tpope/vim-sensible'
 Plug 'cdelledonne/vim-cmake'
+
+
 
 call plug#end()
 
